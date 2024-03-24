@@ -29,12 +29,14 @@ uvicorn main:app --reload
 5. http://127.0.0.1:8000/docs
 
 ## API Endpoints
-GET /observations/: Get all observations
-POST /observations/: Create a new observation
-GET /observations/{observation_id}: Get a specific observation by ID
-PUT /observations/{observation_id}: Update a specific observation by ID
-DELETE /observations/{observation_id}: Delete a specific observation by ID
-GET /observations/closest_location/: Get observations closest to a given location
-GET /observations/date_range/: Get observations within a specified date range
-GET /observations/quality_parameters/: Filter observations by quality parameters
+
+- GET /observations: Get all observations
+- POST /observations: Create a new observation
+- GET /observations/{observation_id}: Get a specific observation by ID
+- PUT /observations/{observation_id}: Update a specific observation by ID
+- DELETE /observations/{observation_id}: Delete a specific observation by ID
+- GET /observations/closest_location: Get observations closest to a given location
+- GET /observations/date_range: Get observations within a specified date range
+- GET /observations/quality_parameters: Filter observations by quality parameters
+
 
