@@ -28,7 +28,7 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 5. http://127.0.0.1:8000/docs
 
-## API Endpoints
+## API Endpoints (Postman collection is added in the project)
 
 - GET /observations: Get all observations
 - POST /observations: Create a new observation
