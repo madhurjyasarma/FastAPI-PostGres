@@ -1,0 +1,424 @@
+{
+	"info": {
+		"_postman_id": "dcedd09d-3bc8-44b6-b87b-2c022487d645",
+		"name": "NatureDotsAPIs",
+		"description": "Here I have shared APIs which includes -\n\n- Add an Observation\n- List all Observations\n- Closest Location\n- Filter data using date range\n    \n- Get data using index",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18755611"
+	},
+	"item": [
+		{
+			"name": "AddObservations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location\": {\r\n        \"latitude\": 18.920180,\r\n        \"longitude\": 72.825768\r\n    },\r\n    \"date_time\": \"2024-03-19T16:45:00Z\",\r\n    \"description\": \"late afternoon water quality observation at Arabian Sea, Mumbai\",\r\n    \"parameters\": {\r\n        \"pH\": 8.1,\r\n        \"conductivity\": 380,\r\n        \"DO\": 75,\r\n        \"contaminants\": [\r\n            \"Plastics\",\r\n            \"Oil Spill\"\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/observations/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"observations",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AddAnObservationExample",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"location\": {\r\n        \"latitude\": 18.920180,\r\n        \"longitude\": 72.825768\r\n    },\r\n    \"date_time\": \"2024-03-19T16:45:00Z\",\r\n    \"description\": \"late afternoon water quality observation at Arabian Sea, Mumbai\",\r\n    \"parameters\": {\r\n        \"pH\": 8.1,\r\n        \"conductivity\": 380,\r\n        \"DO\": 75,\r\n        \"contaminants\": [\r\n            \"Plastics\",\r\n            \"Oil Spill\"\r\n        ]\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/observations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"observations",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 24 Mar 2024 17:29:58 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "269"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"location\": {\n        \"latitude\": 18.92018,\n        \"longitude\": 72.825768\n    },\n    \"date_time\": \"2024-03-19T16:45:00Z\",\n    \"description\": \"late afternoon water quality observation at Arabian Sea, Mumbai\",\n    \"parameters\": {\n        \"pH\": 8.1,\n        \"conductivity\": 380,\n        \"DO\": 75,\n        \"contaminants\": [\n            \"Plastics\",\n            \"Oil Spill\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "ListAllObservations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/observations/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"observations",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ListAllObservationsExample",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/observations/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"observations",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 24 Mar 2024 17:28:26 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "1045"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"location\": {\n            \"latitude\": 40.712776,\n            \"longitude\": -74.005974\n        },\n        \"date_time\": \"2024-03-19T15:00:00Z\",\n        \"description\": \"early afternoon water quality observation at Nehru Park\",\n        \"parameters\": {\n            \"pH\": 7.4,\n            \"conductivity\": 250,\n            \"DO\": 67,\n            \"contaminants\": [\n                \"Lead\",\n                \"Arsenic\"\n            ]\n        }\n    },\n    {\n        \"id\": 2,\n        \"location\": {\n            \"latitude\": 38.89511,\n            \"longitude\": -77.03637\n        },\n        \"date_time\": \"2024-03-20T10:30:00Z\",\n        \"description\": \"morning water quality observation at National Mall\",\n        \"parameters\": {\n            \"pH\": 6.8,\n            \"conductivity\": 280,\n            \"DO\": 65,\n            \"contaminants\": [\n                \"Cadmium\",\n                \"Mercury\"\n            ]\n        }\n    },\n    {\n        \"id\": 3,\n        \"location\": {\n            \"latitude\": 28.70406,\n            \"longitude\": 77.102493\n        },\n        \"date_time\": \"2024-03-19T10:30:00Z\",\n        \"description\": \"morning water quality observation at India Gate, New Delhi\",\n        \"parameters\": {\n            \"pH\": 7.2,\n            \"conductivity\": 320,\n            \"DO\": 82,\n            \"contaminants\": [\n                \"Nitrates\",\n                \"Chlorides\"\n            ]\n        }\n    },\n    {\n        \"id\": 4,\n        \"location\": {\n            \"latitude\": 22.572645,\n            \"longitude\": 88.363892\n        },\n        \"date_time\": \"2024-03-19T13:15:00Z\",\n        \"description\": \"afternoon water quality observation at Hooghly River, Kolkata\",\n        \"parameters\": {\n            \"pH\": 6.9,\n            \"conductivity\": 480,\n            \"DO\": 55,\n            \"contaminants\": [\n                \"Mercury\",\n                \"Chromium\"\n            ]\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "ClosestLoc",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "LocationExample",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/observations/closest_location/?latitude=40.712776&longitude=-74.005974",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"observations",
+								"closest_location",
+								""
+							],
+							"query": [
+								{
+									"key": "latitude",
+									"value": "40.712776"
+								},
+								{
+									"key": "longitude",
+									"value": "-74.005974"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 24 Mar 2024 17:34:51 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "1315"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"location\": {\n            \"latitude\": 40.712776,\n            \"longitude\": -74.005974\n        },\n        \"date_time\": \"2024-03-19T15:00:00Z\",\n        \"description\": \"early afternoon water quality observation at Nehru Park\",\n        \"id\": 1,\n        \"parameters\": {\n            \"pH\": 7.4,\n            \"conductivity\": 250,\n            \"DO\": 67,\n            \"contaminants\": [\n                \"Lead\",\n                \"Arsenic\"\n            ]\n        }\n    },\n    {\n        \"location\": {\n            \"latitude\": 38.89511,\n            \"longitude\": -77.03637\n        },\n        \"date_time\": \"2024-03-20T10:30:00Z\",\n        \"description\": \"morning water quality observation at National Mall\",\n        \"id\": 2,\n        \"parameters\": {\n            \"pH\": 6.8,\n            \"conductivity\": 280,\n            \"DO\": 65,\n            \"contaminants\": [\n                \"Cadmium\",\n                \"Mercury\"\n            ]\n        }\n    },\n    {\n        \"location\": {\n            \"latitude\": 28.70406,\n            \"longitude\": 77.102493\n        },\n        \"date_time\": \"2024-03-19T10:30:00Z\",\n        \"description\": \"morning water quality observation at India Gate, New Delhi\",\n        \"id\": 3,\n        \"parameters\": {\n            \"pH\": 7.2,\n            \"conductivity\": 320,\n            \"DO\": 82,\n            \"contaminants\": [\n                \"Nitrates\",\n                \"Chlorides\"\n            ]\n        }\n    },\n    {\n        \"location\": {\n            \"latitude\": 22.572645,\n            \"longitude\": 88.363892\n        },\n        \"date_time\": \"2024-03-19T13:15:00Z\",\n        \"description\": \"afternoon water quality observation at Hooghly River, Kolkata\",\n        \"id\": 4,\n        \"parameters\": {\n            \"pH\": 6.9,\n            \"conductivity\": 480,\n            \"DO\": 55,\n            \"contaminants\": [\n                \"Mercury\",\n                \"Chromium\"\n            ]\n        }\n    },\n    {\n        \"location\": {\n            \"latitude\": 18.92018,\n            \"longitude\": 72.825768\n        },\n        \"date_time\": \"2024-03-19T16:45:00Z\",\n        \"description\": \"late afternoon water quality observation at Arabian Sea, Mumbai\",\n        \"id\": 5,\n        \"parameters\": {\n            \"pH\": 8.1,\n            \"conductivity\": 380,\n            \"DO\": 75,\n            \"contaminants\": [\n                \"Plastics\",\n                \"Oil Spill\"\n            ]\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "DateRange",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/observations/date_range/?start_date=2024-03-01T00:00:00Z&end_date=2024-03-31T23:59:59Z",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"observations",
+						"date_range",
+						""
+					],
+					"query": [
+						{
+							"key": "start_date",
+							"value": "2024-03-01T00:00:00Z"
+						},
+						{
+							"key": "end_date",
+							"value": "2024-03-31T23:59:59Z"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DataRange",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/observations/date_range/?start_date=2024-03-01T00:00:00Z&end_date=2024-03-31T23:59:59Z",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"observations",
+								"date_range",
+								""
+							],
+							"query": [
+								{
+									"key": "start_date",
+									"value": "2024-03-01T00:00:00Z"
+								},
+								{
+									"key": "end_date",
+									"value": "2024-03-31T23:59:59Z"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 24 Mar 2024 17:35:38 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "1315"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"location\": {\n            \"latitude\": 40.712776,\n            \"longitude\": -74.005974\n        },\n        \"date_time\": \"2024-03-19T15:00:00Z\",\n        \"description\": \"early afternoon water quality observation at Nehru Park\",\n        \"id\": 1,\n        \"parameters\": {\n            \"pH\": 7.4,\n            \"conductivity\": 250,\n            \"DO\": 67,\n            \"contaminants\": [\n                \"Lead\",\n                \"Arsenic\"\n            ]\n        }\n    },\n    {\n        \"location\": {\n            \"latitude\": 38.89511,\n            \"longitude\": -77.03637\n        },\n        \"date_time\": \"2024-03-20T10:30:00Z\",\n        \"description\": \"morning water quality observation at National Mall\",\n        \"id\": 2,\n        \"parameters\": {\n            \"pH\": 6.8,\n            \"conductivity\": 280,\n            \"DO\": 65,\n            \"contaminants\": [\n                \"Cadmium\",\n                \"Mercury\"\n            ]\n        }\n    },\n    {\n        \"location\": {\n            \"latitude\": 28.70406,\n            \"longitude\": 77.102493\n        },\n        \"date_time\": \"2024-03-19T10:30:00Z\",\n        \"description\": \"morning water quality observation at India Gate, New Delhi\",\n        \"id\": 3,\n        \"parameters\": {\n            \"pH\": 7.2,\n            \"conductivity\": 320,\n            \"DO\": 82,\n            \"contaminants\": [\n                \"Nitrates\",\n                \"Chlorides\"\n            ]\n        }\n    },\n    {\n        \"location\": {\n            \"latitude\": 22.572645,\n            \"longitude\": 88.363892\n        },\n        \"date_time\": \"2024-03-19T13:15:00Z\",\n        \"description\": \"afternoon water quality observation at Hooghly River, Kolkata\",\n        \"id\": 4,\n        \"parameters\": {\n            \"pH\": 6.9,\n            \"conductivity\": 480,\n            \"DO\": 55,\n            \"contaminants\": [\n                \"Mercury\",\n                \"Chromium\"\n            ]\n        }\n    },\n    {\n        \"location\": {\n            \"latitude\": 18.92018,\n            \"longitude\": 72.825768\n        },\n        \"date_time\": \"2024-03-19T16:45:00Z\",\n        \"description\": \"late afternoon water quality observation at Arabian Sea, Mumbai\",\n        \"id\": 5,\n        \"parameters\": {\n            \"pH\": 8.1,\n            \"conductivity\": 380,\n            \"DO\": 75,\n            \"contaminants\": [\n                \"Plastics\",\n                \"Oil Spill\"\n            ]\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GetOneRecord",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/observations/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"observations",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GetRecordByIndex",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/observations/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"observations",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Sun, 24 Mar 2024 17:47:22 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "257"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"location\": {\n        \"latitude\": 40.712776,\n        \"longitude\": -74.005974\n    },\n    \"date_time\": \"2024-03-19T15:00:00Z\",\n    \"description\": \"early afternoon water quality observation at Nehru Park\",\n    \"parameters\": {\n        \"pH\": 7.4,\n        \"conductivity\": 250,\n        \"DO\": 67,\n        \"contaminants\": [\n            \"Lead\",\n            \"Arsenic\"\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "http://127.0.0.1:8000/observations/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"location\": {\r\n        \"latitude\": 11.090,\r\n        \"longitude\": 71.825768\r\n    },\r\n    \"date_time\": \"2024-03-19T16:45:00Z\",\r\n    \"description\": \"late afternoon water quality observation at Arabian Sea, Mumbai\",\r\n    \"parameters\": {\r\n        \"pH\": 8.1,\r\n        \"conductivity\": 380,\r\n        \"DO\": 75,\r\n        \"contaminants\": [\r\n            \"Plastics\",\r\n            \"Oil Spill\"\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/observations/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"observations",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
