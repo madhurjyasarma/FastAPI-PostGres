@@ -56,4 +56,10 @@ uvicorn main:app --reload
 - Here is a screenshot of the inserted records in the PostGres database. Here (Index 7) "New Observation has been inserted" from the EC2 machine to database.
 ![Screenshot (21)](https://github.com/madhurjyasarma/FastAPI-PostGres/assets/77984764/0ffbc6ec-229c-4cf6-aaae-e2c671ffc4cd)
 
+## Thanks
+- To conclude
+- I will also add Authentication using JWT in this project in future.
+- I will also add testing using PyTest for the API endpoints to ensure reliability and
+facilitate continuous integration and deployment processes.
+
 
