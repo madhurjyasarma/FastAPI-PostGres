@@ -39,4 +39,20 @@ uvicorn main:app --reload
 - GET /observations/date_range: Get observations within a specified date range
 - GET /observations/quality_parameters: Filter observations by quality parameters
 
+## Note - 
+- I have created the APIs using FastAPI with a PostGres database. The documentation for the API can be found in the POSTMAN collections. At this point the requirement 1,2 is completed.
+  ![Screenshot (22)](https://github.com/madhurjyasarma/FastAPI-PostGres/assets/77984764/0a8eec12-e0b7-415e-a594-a5efac42d484)
+  Example of one API with POSTMAN
+  ![Screenshot (7)](https://github.com/madhurjyasarma/FastAPI-PostGres/assets/77984764/5becd497-7d55-4b48-9951-c8b8b47bbe8e)
+
+- But while creating the docker container I was facing error some problem with Docker daemon. Since I could't able to create a docker container.
+  Since I couldn't able to create the image, I also didn't tried Localstack since it requires that docker image. (Note: I have worked in Localstack before in a similar task)
+  The error, This error occured due to some problem with my laptop.
+  ![Screenshot (15)](https://github.com/madhurjyasarma/FastAPI-PostGres/assets/77984764/0afceb67-c822-4698-82ad-51adfe1ec7cb)
+
+- So, I have decided to deploy the application directly to a AWS EC2 instance, Using a CURL command I am able to add a record in the database.
+![Screenshot (20)](https://github.com/madhurjyasarma/FastAPI-PostGres/assets/77984764/bb4c8ce0-08e8-46f1-8fef-bbb7a16bd762)
+
+- Here is a screenshot of the inserted records in the PostGres database 
+![Screenshot (22)](https://github.com/madhurjyasarma/FastAPI-PostGres/assets/77984764/1ee186f2-1b03-49c3-9359-788ceb80b32a)
 
