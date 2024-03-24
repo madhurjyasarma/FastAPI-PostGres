@@ -53,6 +53,7 @@ uvicorn main:app --reload
 - So, I have decided to deploy the application directly to a AWS EC2 instance, Using a CURL command I am able to add a record in the database.
 ![Screenshot (20)](https://github.com/madhurjyasarma/FastAPI-PostGres/assets/77984764/bb4c8ce0-08e8-46f1-8fef-bbb7a16bd762)
 
-- Here is a screenshot of the inserted records in the PostGres database 
-![Screenshot (22)](https://github.com/madhurjyasarma/FastAPI-PostGres/assets/77984764/1ee186f2-1b03-49c3-9359-788ceb80b32a)
+- Here is a screenshot of the inserted records in the PostGres database. Here (Index 7) "New Observation has been inserted" from the EC2 machine to database.
+![Screenshot (21)](https://github.com/madhurjyasarma/FastAPI-PostGres/assets/77984764/0ffbc6ec-229c-4cf6-aaae-e2c671ffc4cd)
+
 
