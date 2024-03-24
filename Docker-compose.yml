@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+  db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=turnoverdb_owner
+      - POSTGRES_PASSWORD=1FL8RPuzgkwo
+      - POSTGRES_DB=NatureDots
