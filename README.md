@@ -46,8 +46,7 @@ uvicorn main:app --reload
   ![Screenshot (7)](https://github.com/madhurjyasarma/FastAPI-PostGres/assets/77984764/5becd497-7d55-4b48-9951-c8b8b47bbe8e)
 
 - But while creating the docker container I was facing error some problem with Docker daemon. Since I could't able to create a docker container.
-  Since I couldn't able to create the image, I also didn't tried Localstack since it requires that docker image. (Note: I have worked in Localstack before in a similar task)
-  The error, This error occured due to some problem with my laptop.
+  Since I couldn't able to create the image, I also didn't tried Localstack since it requires that docker image.
   ![Screenshot (15)](https://github.com/madhurjyasarma/FastAPI-PostGres/assets/77984764/0afceb67-c822-4698-82ad-51adfe1ec7cb)
 
 - So, I have decided to deploy the application directly to a AWS EC2 instance, Using a CURL command I am able to add a record in the database.
