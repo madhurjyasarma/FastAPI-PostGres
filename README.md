@@ -19,13 +19,15 @@ FastAPI NatureDots is a RESTful API project built using FastAPI, SQLAlchemy, and
 ## Setup
 
 1. Clone the repository:
-git clone https://github.com/your-username/fastapi-naturedots.git
+git clone [This Repo](https://github.com/madhurjyasarma/FastAPI-PostGres)
 2. Change directory into it -
 cd fastapi-naturedots
 3. Install the dependencies -
 pip install -r requirements.txt
 4. Run the server-
+```
 uvicorn main:app --reload
+```
 5. http://127.0.0.1:8000/docs
 
 ## API Endpoints (Postman collection is added in the project)
