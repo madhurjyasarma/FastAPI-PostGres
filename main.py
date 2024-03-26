@@ -8,10 +8,16 @@ from typing import List
 import datetime
 from fastapi import Query
 from sqlalchemy import func
+import os
+
+# Import dotenv and load environment variables
+from dotenv import load_dotenv
+load_dotenv()
 
 
-# NeonDB PostgreSQL database URL - replace with your actual NeonDB credentials and configuration
-DATABASE_URL = "postgresql://turnoverdb_owner:1FL8RPuzgkwo@ep-gentle-field-a1seqjg1.ap-southeast-1.aws.neon.tech/NatureDots?sslmode=require"
+# NeonDB PostgreSQL database URL
+DATABASE_URL = os.getenv("DATABASE_URL")
+
 
 # Create SQLAlchemy engine
 engine = create_engine(DATABASE_URL)
