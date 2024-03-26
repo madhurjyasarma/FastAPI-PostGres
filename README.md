@@ -23,8 +23,10 @@ git clone [This Repo](https://github.com/madhurjyasarma/FastAPI-PostGres)
 2. Change directory into it -
 cd fastapi-naturedots
 3. Install the dependencies -
+```
 pip install -r requirements.txt
-4. Run the server-
+```
+5. Run the server-
 ```
 uvicorn main:app --reload
 ```
