@@ -58,7 +58,7 @@ uvicorn main:app --reload
 ## Thanks
 - To conclude
 - I will also add Authentication using JWT in this project in future.
-- I will also add testing using PyTest for the API endpoints to ensure reliability and
+- I will also add testing for the API endpoints to ensure reliability and
 facilitate continuous integration and deployment processes.
 
 
